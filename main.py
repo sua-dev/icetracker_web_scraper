@@ -60,6 +60,10 @@ latest_entry_21 = data_rover_21[-1]
 latest_entry_100 = data_base_100[-1]
 latest_entry_101 = data_base_101[-1]
 
+# TODO: Last update flag and create a timestamp with it
+last_updated = False
+# TODO: while True system to run forever whilst the script is running 
+
 
 for node in list(Rovers):
     # print(node.value)
@@ -70,11 +74,11 @@ for node in list(Rovers):
             if (len(data_rover_19)) > size_of_19:
                 print(size_of_19)
 
-                print("New Data Entry Obtained on Node: %s", ROVER_19)
+                print("New Data Entry Obtained on Node: %s" % ROVER_19)
                 latest_entry_19 = data_rover_19[-1]
                 # print(latest_entry_19)
             else:
-                print("Up-to-date")
+                print("%s - Up-to-date" % ROVER_19)
                 latest_entry_19 = data_rover_19[-1]
                 # print(latest_entry_19)
         case 20:
@@ -83,11 +87,11 @@ for node in list(Rovers):
             
             if (len(data_rover_20)) > size_of_20:
                 print(size_of_20)
-                print("New Data Entry Obtained on Node: %s", ROVER_20)
+                print("New Data Entry Obtained on Node: %s" % ROVER_20)
                 latest_entry_20 = data_rover_20[-1]
                 # print(latest_entry_20)
             else:
-                print("Up-to-date")
+                print("%s - Up-to-date" % ROVER_20)
                 latest_entry_20 = data_rover_20[-1]
                 # print(latest_entry_20)
         case 21:
@@ -95,11 +99,11 @@ for node in list(Rovers):
             # print(data_rover_21[-1])
             if (len(data_rover_21)) > size_of_21:
                 print(size_of_21)
-                print("New Data Entry Obtained on Node: %s", ROVER_21)
+                print("New Data Entry Obtained on Node: %s" % ROVER_21)
                 latest_entry_21 = data_rover_21[-1]
                 # print(latest_entry_21)
             else:
-                print("Up-to-date")
+                print("%s - Up-to-date" % ROVER_21)
                 latest_entry_21 = data_rover_21[-1]
                 # print(latest_entry_21)
         case 100:
@@ -107,11 +111,11 @@ for node in list(Rovers):
             # print(data_base_100[-1])
             if (len(data_base_100)) > size_of_100:
                 print(size_of_100)
-                print("New Data Entry Obtained on Node: %s", BASE_100)
+                print("New Data Entry Obtained on Node: %s" % BASE_100)
                 latest_entry_100 = data_base_100[-1]
                 # print(latest_entry_100)
             else:
-                print("Up-to-date")
+                print("%s - Up-to-date" % BASE_100)
                 latest_entry_100 = data_base_100[-1]
                 # print(latest_entry_100)
         case 101:
@@ -119,11 +123,11 @@ for node in list(Rovers):
             # print(data_base_101[-1])
             if (len(data_base_101)) > size_of_101:
                 print(size_of_101)
-                print("New Data Entry Obtained on Node: %s", BASE_101)
+                print("New Data Entry Obtained on Node: %s" % BASE_101)
                 latest_entry_101 = data_base_101[-1]
                 # print(latest_entry_101)
             else:
-                print("Up-to-date")
+                print("%s - Up-to-date" % BASE_101)
                 latest_entry_101 = data_base_101[-1]
                 # print(latest_entry_101)
         case _:
@@ -144,11 +148,7 @@ print("Done")
 
 
 #TODO: Store length of current entry -
-# if length of new entry is greater than the one stored - save the latest data entry from each node into an updated variable
+# if length of new entry is greater than the one stored - 
+# save the latest data entry from each node into an updated variable
 # write that variable to a static html file
-# print(data_rover_19[-1])
-# print(data_rover_20[-1])
-# print(data_rover_21[-1])
-# print(data_base_100[-1])
-# print(data_base_101[-1])
 
