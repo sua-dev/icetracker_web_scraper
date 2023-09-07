@@ -53,15 +53,23 @@ size_of_21 = (len(data_rover_21))
 size_of_100 = (len(data_base_100))
 size_of_101 = (len(data_base_101))
 
+# Get Latest JSON Entry
+latest_entry_19 = data_rover_19[-1]
+latest_entry_20 = data_rover_20[-1]
+latest_entry_21 = data_rover_21[-1]
+latest_entry_100 = data_base_100[-1]
+latest_entry_101 = data_base_101[-1]
+
 
 for node in list(Rovers):
     # print(node.value)
     match node.value:
         case 19:
-            print("Node 19")
+            # print("Node 19")
             # print(data_rover_19[-1])
-            print(size_of_19)
             if (len(data_rover_19)) > size_of_19:
+                print(size_of_19)
+
                 print("New Data Entry Obtained on Node: %s", ROVER_19)
                 latest_entry_19 = data_rover_19[-1]
                 # print(latest_entry_19)
@@ -70,10 +78,11 @@ for node in list(Rovers):
                 latest_entry_19 = data_rover_19[-1]
                 # print(latest_entry_19)
         case 20:
-            print("Node 20")
+            # print("Node 20")
             # print(data_rover_20[-1])
-            print(size_of_20)
+            
             if (len(data_rover_20)) > size_of_20:
+                print(size_of_20)
                 print("New Data Entry Obtained on Node: %s", ROVER_20)
                 latest_entry_20 = data_rover_20[-1]
                 # print(latest_entry_20)
@@ -82,10 +91,10 @@ for node in list(Rovers):
                 latest_entry_20 = data_rover_20[-1]
                 # print(latest_entry_20)
         case 21:
-            print("Node 21")
+            # print("Node 21")
             # print(data_rover_21[-1])
-            print(size_of_21)
             if (len(data_rover_21)) > size_of_21:
+                print(size_of_21)
                 print("New Data Entry Obtained on Node: %s", ROVER_21)
                 latest_entry_21 = data_rover_21[-1]
                 # print(latest_entry_21)
@@ -94,10 +103,10 @@ for node in list(Rovers):
                 latest_entry_21 = data_rover_21[-1]
                 # print(latest_entry_21)
         case 100:
-            print("Node 100")
+            # print("Node 100")
             # print(data_base_100[-1])
-            print(size_of_100)
             if (len(data_base_100)) > size_of_100:
+                print(size_of_100)
                 print("New Data Entry Obtained on Node: %s", BASE_100)
                 latest_entry_100 = data_base_100[-1]
                 # print(latest_entry_100)
@@ -106,10 +115,10 @@ for node in list(Rovers):
                 latest_entry_100 = data_base_100[-1]
                 # print(latest_entry_100)
         case 101:
-            print("Node 101")
+            # print("Node 101")
             # print(data_base_101[-1])
-            print(size_of_101)
             if (len(data_base_101)) > size_of_101:
+                print(size_of_101)
                 print("New Data Entry Obtained on Node: %s", BASE_101)
                 latest_entry_101 = data_base_101[-1]
                 # print(latest_entry_101)
@@ -135,7 +144,11 @@ print("Done")
 
 
 #TODO: Store length of current entry -
-# if length of new entry is greater than the one stored - 
-# save the latest data entry from each node into an updated variable
+# if length of new entry is greater than the one stored - save the latest data entry from each node into an updated variable
 # write that variable to a static html file
+# print(data_rover_19[-1])
+# print(data_rover_20[-1])
+# print(data_rover_21[-1])
+# print(data_base_100[-1])
+# print(data_base_101[-1])
 
