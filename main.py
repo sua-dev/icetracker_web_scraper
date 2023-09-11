@@ -1,7 +1,7 @@
 import requests
-from bs4 import BeautifulSoup
-import json
-import re
+# from bs4 import BeautifulSoup
+# import json
+# import re
 import pandas as pd
 from enum import Enum
 from json2html import *
@@ -31,12 +31,18 @@ ROVER_22 = "22"
 BASE_100 = "100"
 BASE_101 = "101"
 
+def tracker_url(node_id):
+    return (MARC_SERVER+TRACKER_IN_DOMAIN+node_id)
+
 tracker_in_19_url = (MARC_SERVER+TRACKER_IN_DOMAIN+ROVER_19)
 tracker_in_20_url = (MARC_SERVER+TRACKER_IN_DOMAIN+ROVER_20)
 tracker_in_21_url = (MARC_SERVER+TRACKER_IN_DOMAIN+ROVER_21)
 tracker_in_22_url = (MARC_SERVER+TRACKER_IN_DOMAIN+ROVER_22)
 tracker_in_100_url = (MARC_SERVER+TRACKER_IN_DOMAIN+BASE_100)
 tracker_in_101_url = (MARC_SERVER+TRACKER_IN_DOMAIN+BASE_101)
+
+def request_page(tracker_page):
+    return requests.get(tracker_page, params={'load_amount':10, 'offset': 0})
 
 page_19_json = requests.get(tracker_in_19_url, params={'load_amount':10, 'offset': 0})
 page_20_json = requests.get(tracker_in_20_url, params={'load_amount':10, 'offset': 0})
@@ -46,12 +52,18 @@ page_100_json = requests.get(tracker_in_100_url, params={'load_amount':10, 'offs
 page_101_json = requests.get(tracker_in_101_url, params={'load_amount':10, 'offset': 0})
 # print(page_19_json.headers['Content-Type']) - returns application/json
 
+def jsonify(data_page):
+    return data_page.json() 
+
 data_rover_19 = page_19_json.json()
 data_rover_20 = page_20_json.json()
 data_rover_21 = page_21_json.json()
 data_rover_22 = page_22_json.json()
 data_base_100 = page_100_json.json()
 data_base_101 = page_101_json.json()
+
+def length_of_data_entries(data_entry):
+    return len(data_entry)
 
 size_of_19 = (len(data_rover_19))
 size_of_20 = (len(data_rover_20))
@@ -61,6 +73,9 @@ size_of_100 = (len(data_base_100))
 size_of_101 = (len(data_base_101))
 
 ''' Get Latest JSON Entry '''
+def latest_entry(data_entry):
+    return data_entry[-1]
+
 latest_entry_19 = data_rover_19[-1]
 latest_entry_20 = data_rover_20[-1]
 latest_entry_21 = data_rover_21[-1]
