@@ -166,10 +166,3 @@ print("Done")
 #         print(latest_entry_19)
 #         break
 
-
-
-#TODO: Store length of current entry -
-# if length of new entry is greater than the one stored - 
-# save the latest data entry from each node into an updated variable
-# write that variable to a static html file
-
