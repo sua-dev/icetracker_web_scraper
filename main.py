@@ -44,6 +44,8 @@ def create_instance():
 def tracker_url(node_id):
     return (MARC_SERVER+TRACKER_IN_DOMAIN+str(node_id))
 
+#TODO - remove duplicate code and apply recent changes with lists to update_table()
+
 tracker_in_19_url = (MARC_SERVER+TRACKER_IN_DOMAIN+ROVER_19)
 tracker_in_20_url = (MARC_SERVER+TRACKER_IN_DOMAIN+ROVER_20)
 tracker_in_21_url = (MARC_SERVER+TRACKER_IN_DOMAIN+ROVER_21)
