@@ -5,7 +5,8 @@ NODE_ID = int(ROVER_22)
 split_data(NODE_ID)
 
 # Data points provided by web_scraper_data
-labels = lat
+long_data = long
+lat_data = lat
 data = voltage
 timestp = timestamp
 values = temperature
@@ -29,7 +30,7 @@ chart_script = f"""
                     data: {data},
                     borderColor: 'rgba(75, 192, 192, 1)',
                     borderWidth: 2,
-                    fill: false
+                    fill: true
                 }}]
             }},
             options: {{
@@ -51,7 +52,7 @@ chart_script = f"""
                     data: {values},
                     borderColor: 'rgb(50, 58, 168)',
                     borderWidth: 2,
-                    fill: false
+                    fill: true
                 }}]
             }},
             options: {{
@@ -68,13 +69,13 @@ chart_script = f"""
         var longlat = new Chart(ctx3, {{
             type: 'line',
             data: {{
-                labels: {timestp},
+                labels: {long_data},
                 datasets: [{{
                     label: 'Rover {NODE_ID} - Latitude against Longitude',
-                    data: {values},
+                    data: {lat_data},
                     borderColor: 'rgb(168, 72, 50)',
                     borderWidth: 2,
-                    fill: false
+                    fill: true
                 }}]
             }},
             options: {{
